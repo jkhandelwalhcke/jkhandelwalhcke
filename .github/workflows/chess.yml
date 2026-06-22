@@ -1,0 +1,15 @@
+name: Play Chess
+
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+
+jobs:
+  play-chess:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: marcizhu/readme-chess@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
